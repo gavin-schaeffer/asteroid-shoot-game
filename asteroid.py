@@ -25,3 +25,11 @@ class Asteroid(circleshape.CircleShape):
             second_asteroid = Asteroid(self.position.x, self.position.y, new_asteroid_radius)
             first_asteroid.velocity = first_new_asteroid_vel * 1.2
             second_asteroid.velocity = second_new_asteroid_vel * 1.2
+    
+    def record_score(self):
+        if self.radius == ASTEROID_MAX_RADIUS:
+            return 1
+        elif self.radius == ASTEROID_MIN_RADIUS:
+            return 3
+        else:
+            return 2
